@@ -283,6 +283,7 @@
         forms.forEach((form) => {
             const action = (form.getAttribute('action') || '').toLowerCase();
             if (!action || action.includes('login-index.html')) return;
+            if (action === '/api/login' || action === '/api/signup') return;
             if (form.hasAttribute('data-auth-wired')) return;
 
             form.setAttribute('data-auth-wired', '1');
@@ -415,6 +416,10 @@
         if (isDashboardPage) return;
 
         await wireLoginPage();
+
+        if (isLoginPage) {
+            return;
+        }
 
         let me = null;
         try {
