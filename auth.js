@@ -338,6 +338,10 @@
 
     async function wireLoginPage() {
         if (!isLoginPage) return;
+        // On deployment, native form POST + server redirect is more reliable
+        // than fetch interception for auth forms.
+        const preferNativeAuthSubmit = true;
+        if (preferNativeAuthSubmit) return;
 
         const loginForm = document.querySelector('.login-form form');
         const signupForm = document.querySelector('.signup-form form');

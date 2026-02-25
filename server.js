@@ -350,6 +350,14 @@ app.post(
             return;
         }
 
+        const adminEmailFromEnv = (process.env.ADMIN_EMAIL || '').trim().toLowerCase();
+        let effectiveRole = user.role;
+
+        if (adminEmailFromEnv && normalizedEmail === adminEmailFromEnv && user.role !== 'admin') {
+            await dbRun("UPDATE users SET role = 'admin' WHERE id = ?", [user.id]);
+            effectiveRole = 'admin';
+        }
+
         req.session.regenerate((regenErr) => {
             if (regenErr) {
                 res.status(500).json({ success: false, error: 'failed to create session' });
@@ -357,7 +365,7 @@ app.post(
             }
 
             req.session.userId = user.id;
-            req.session.userRole = user.role;
+            req.session.userRole = effectiveRole;
 
             req.session.save((saveErr) => {
                 if (saveErr) {
@@ -365,7 +373,11 @@ app.post(
                     return;
                 }
 
-                const redirectTo = user.role === 'admin' ? '/dashboard.html' : '/index.html';
+                const redirectTo = effectiveRole === 'admin' ? '/dashboard.html' : '/index.html';
+                const responseUser = {
+                    ...user,
+                    role: effectiveRole,
+                };
 
                 if (!req.is('application/json')) {
                     res.redirect(303, redirectTo);
@@ -376,7 +388,7 @@ app.post(
                     success: true,
                     message: 'login successful',
                     redirectTo,
-                    user: sanitizeUserRow(user),
+                    user: sanitizeUserRow(responseUser),
                 });
             });
         });
