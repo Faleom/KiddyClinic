@@ -315,6 +315,12 @@
         return el ? String(el.value || '').trim() : '';
     }
 
+    function submitFormNatively(form) {
+        if (!form) return;
+        form.dataset.nativeSubmit = '1';
+        HTMLFormElement.prototype.submit.call(form);
+    }
+
     function sanitizeProfileData(raw) {
         const cleaned = {};
         Object.entries(raw || {}).forEach(([key, value]) => {
@@ -337,6 +343,10 @@
 
         if (loginForm) {
             loginForm.addEventListener('submit', async function (event) {
+                if (loginForm.dataset.nativeSubmit === '1') {
+                    return;
+                }
+
                 event.preventDefault();
 
                 const email = extractBySelector(loginForm, 'input[type="email"]');
@@ -350,13 +360,17 @@
 
                     window.location.href = result.redirectTo || '/index.html';
                 } catch (err) {
-                    alert(`Login failed: ${err.message}`);
+                    submitFormNatively(loginForm);
                 }
             });
         }
 
         if (signupForm) {
             signupForm.addEventListener('submit', async function (event) {
+                if (signupForm.dataset.nativeSubmit === '1') {
+                    return;
+                }
+
                 event.preventDefault();
 
                 const email = extractBySelector(signupForm, 'input[type="email"]');
@@ -391,7 +405,7 @@
 
                     window.location.href = result.redirectTo || '/index.html';
                 } catch (err) {
-                    alert(`Signup failed: ${err.message}`);
+                    submitFormNatively(signupForm);
                 }
             });
         }

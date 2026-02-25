@@ -233,6 +233,7 @@ function requireAdminPage(req, res, next) {
 
 app.disable('x-powered-by');
 app.use(express.json({ limit: '1mb' }));
+app.use(express.urlencoded({ extended: true }));
 
 app.use(
     session({
@@ -306,6 +307,11 @@ app.post(
             req.session.save((saveErr) => {
                 if (saveErr) {
                     res.status(500).json({ success: false, error: 'failed to persist session' });
+                    return;
+                }
+
+                if (!req.is('application/json')) {
+                    res.redirect(303, '/index.html');
                     return;
                 }
 
