@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KiddyClinic</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg py-3" aria-label="Main navigation">
+            <div class="container">
+                <div class="navbar-brand logo mb-0">KiddyClinic</div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2 mt-3 mt-lg-0">
+                        <li class="nav-item"><a class="nav-link nav-pill" href="#beranda">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link nav-pill" href="#tentang">Tentang Kami</a></li>
+                        <li class="nav-item"><a class="nav-link nav-pill" href="#dokter">Profil Dokter</a></li>
+                        <li class="nav-item"><a class="nav-link nav-pill" href="#kontak">Hubungi Kami</a></li>
+                        <li class="nav-item ms-lg-2"><button type="button" class="btn btn-outline-danger fw-bold" data-auth-logout>Logout</button></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="beranda" class="hero-section py-5">
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="container position-relative">
+                <div class="row">
+                    <div class="col-12 col-lg-9">
+                        <h1 class="display-6 fw-bold mb-4">Melayani dengan Hati di Era New Normal!</h1>
+                    </div>
+                </div>
+
+                <div class="row g-3 hero-services">
+                    <div class="col-12 col-sm-6 col-lg-3 d-grid">
+                        <a href="#vaksinasi" class="card service-card text-decoration-none shadow-sm h-100">
+                            <div class="card-body text-center p-4">
+                                <i class="fas fa-syringe fa-4x mb-3"></i>
+                                <h2 class="h5 card-title">Vaksinasi</h2>
+                                <p class="card-text mb-0">Lengkapi vaksinasi anak umur 0-18 tahun</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 d-grid">
+                        <a href="#konsultasi" class="card service-card text-decoration-none shadow-sm h-100">
+                            <div class="card-body text-center p-4">
+                                <i class="fas fa-user-md fa-4x mb-3"></i>
+                                <h2 class="h5 card-title">Konsultasi</h2>
+                                <p class="card-text mb-0">Lakukan konsultasi tatap muka virtual atau chat dengan dokter</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 d-grid">
+                        <a href="#obat" class="card service-card text-decoration-none shadow-sm h-100">
+                            <div class="card-body text-center p-4">
+                                <i class="fas fa-capsules fa-4x mb-3"></i>
+                                <h2 class="h5 card-title">Obat</h2>
+                                <p class="card-text mb-0">Beli atau ambil obatmu di sini</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 d-grid">
+                        <a href="#covid" class="card service-card text-decoration-none shadow-sm h-100">
+                            <div class="card-body text-center p-4">
+                                <i class="fas fa-comment-medical fa-4x mb-3"></i>
+                                <h2 class="h5 card-title">Layanan COVID-19</h2>
+                                <p class="card-text mb-0">Segera konsultasikan gejala COVID-19 anak di sini</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-sections py-4" aria-label="Layanan utama">
+            <div class="container-fluid px-0">
+                <div class="row g-0">
+                    <section id="vaksinasi" class="col-12 col-md-6 service-block bgc1 text-center p-4 p-lg-5">
+                        <h2 class="mb-4">Vaksinasi</h2>
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-4">
+                                <a class="category text-decoration-none" href="login-vaksinasi-onsite.html">
+                                    <span class="round"><i class="fas fa-clinic-medical fa-2x"></i></span>
+                                    <span class="capt d-block mt-3">Klinik</span>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a class="category text-decoration-none" href="login-vaksinasi-drive.html">
+                                    <span class="round"><i class="fas fa-car fa-2x"></i></span>
+                                    <span class="capt d-block mt-3">Drivethru</span>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a class="category text-decoration-none" href="login-vaksinasi-home.html">
+                                    <span class="round"><i class="fas fa-home fa-2x"></i></span>
+                                    <span class="capt d-block mt-3">Rumah</span>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="konsultasi" class="col-12 col-md-6 service-block bgc2 text-center p-4 p-lg-5">
+                        <h2 class="mb-4">Konsultasi</h2>
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-4">
+                                <a class="category text-decoration-none" href="login-konsultasi-meeting.html">
+                                    <span class="round"><i class="fas fa-user-md fa-2x"></i></span>
+                                    <span class="capt d-block mt-3">Meeting</span>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a class="category text-decoration-none" href="login-konsultasi-chat.html">
+                                    <span class="round"><i class="fas fa-comments fa-2x"></i></span>
+                                    <span class="capt d-block mt-3">Chat</span>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a class="category text-decoration-none" href="login-konsultasi-onsite.html">
+                                    <span class="round"><i class="fas fa-clinic-medical fa-2x"></i></span>
+                                    <span class="capt d-block mt-3">Klinik</span>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="obat" class="col-12 col-md-6 service-block bgc3 text-center p-4 p-lg-5">
+                        <h2 class="mb-4">Obat</h2>
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-12 col-sm-8 col-md-10 col-lg-8">
+                                <a class="category text-decoration-none" href="login-obat-resep.html">
+                                    <span class="round"><i class="fas fa-file-alt fa-2x"></i></span>
+                                    <span class="capt d-block mt-3">Ambil obat dari resep dokter</span>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="covid" class="col-12 col-md-6 service-block bgc4 text-center p-4 p-lg-5">
+                        <h2 class="mb-4">Layanan COVID-19</h2>
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-6">
+                                <a class="category text-decoration-none" href="login-covid-konsultasi.html">
+                                    <span class="round"><i class="fas fa-user-md fa-2x"></i></span>
+                                    <span class="capt d-block mt-3">Konsultasi Dokter (Chat)</span>
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a class="category text-decoration-none" href="login-isoman.html">
+                                    <span class="round"><i class="fas fa-baby fa-2x"></i></span>
+                                    <span class="capt d-block mt-3">Panduan Isoman Anak</span>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <section id="dokter" class="py-5" aria-labelledby="dokter-title">
+            <div class="container">
+                <h2 id="dokter-title" class="text-center mb-4">Dokter Kami</h2>
+                <div class="row g-4">
+                    <article class="col-12 col-md-6 col-lg-4">
+                        <div class="card doctor-card h-100 shadow-sm text-center">
+                            <img src="https://image.freepik.com/free-photo/portrait-smiling-handsome-male-doctor-man_171337-5055.jpg" class="card-img-top" alt="dr. Ethan Gunawan Sp. A">
+                            <div class="card-body">
+                                <span class="badge rounded-pill text-bg-success mb-3 p-2 d-inline-block">
+                                    <span class="d-block fs-6">dr. Ethan Gunawan Sp. A</span>
+                                    <span class="d-block">Spesialis Anak</span>
+                                </span>
+                                <h3 class="h6 fw-semibold mt-2">Jadwal Praktek</h3>
+                                <p class="mb-0">Senin - Sabtu<br>9.00 - 21.00 WITA</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-12 col-md-6 col-lg-4">
+                        <div class="card doctor-card h-100 shadow-sm text-center">
+                            <img src="https://thumbs.dreamstime.com/b/happy-young-doctor-working-laptop-16099267.jpg" class="card-img-top" alt="dr. Edwin Debus Sp. BA">
+                            <div class="card-body">
+                                <span class="badge rounded-pill text-bg-success mb-3 p-2 d-inline-block">
+                                    <span class="d-block fs-6">dr. Edwin Debus Sp. BA</span>
+                                    <span class="d-block">Spesialis Bedah Anak</span>
+                                </span>
+                                <h3 class="h6 fw-semibold mt-2">Jadwal Praktek</h3>
+                                <p class="mb-0"><em>Hanya dengan perjanjian</em></p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-12 col-md-6 col-lg-4">
+                        <div class="card doctor-card h-100 shadow-sm text-center">
+                            <img src="https://media.istockphoto.com/photos/keeping-you-healthy-is-my-priority-picture-id475780596?k=20&m=475780596&s=612x612&w=0&h=01fu_p2HS9GNZES0wo7VPHC8mMWvffsNJqq84oFchuw=" class="card-img-top" alt="dr. Lena Kurni Sp. A(K)">
+                            <div class="card-body">
+                                <span class="badge rounded-pill text-bg-success mb-3 p-2 d-inline-block">
+                                    <span class="d-block fs-6">dr. Lena Kurni Sp. A(K)</span>
+                                    <span class="d-block">Spesialis Tumbuh Kembang Anak</span>
+                                </span>
+                                <h3 class="h6 fw-semibold mt-2">Jadwal Praktek</h3>
+                                <p class="mb-0">Senin - Kamis<br>10.00 - 19.00 WITA</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="tentang" class="about-section py-5" aria-labelledby="tentang-title">
+            <div class="about-overlay" aria-hidden="true"></div>
+            <div class="container position-relative">
+                <h2 id="tentang-title" class="text-center mb-3">Tentang Kami</h2>
+                <hr class="mx-auto section-divider">
+                <p class="about-text mb-0">
+                    Klinik anak KiddyClinic adalah klinik anak yang mengutamakan kesehatan anak. Masalah-masalah kesehatan anak merupakan hal yang sensitif dan memerlukan dasar pengetahuan dan keterampilan khusus.
+                    <br><br>
+                    Klinik anak KiddyClinic mengerti akan kebutuhan spesial si kecil di dukung oleh dokter spesialis anak, dokter spesial tumbuh kembang dan dokter spesialis bedah anak, berkomitmen untuk memberikan penanganan yang sesuai untuk setiap anak, di dukung oleh lingkungan dan suasana yang menyenangkan bagi anak-anak.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="kontak" class="site-footer py-5">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-12 col-md-6 text-center text-md-start">
+                    <div class="logo">KiddyClinic</div>
+                </div>
+                <div class="col-12 col-md-6 text-center text-md-end">
+                    Tanjung Merdeka <br>
+                    Jl. Metro Tj. Bunga No.Kav. 9, Tj. Merdeka, Sulawesi Selatan<br>
+                    Tel: 0411 524 434 <br>
+                    WhatsApp: +62 859 3525 0333 <br>
+                    Email: customer@kiddyclinic.com
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="auth.js" defer></script>
+</body>
+</html>

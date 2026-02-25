@@ -1,0 +1,93 @@
+:root {
+    --bg: #f3f7f6;
+    --card-bg: #ffffff;
+    --brand: #198754;
+    --text: #1f2933;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.dashboard-navbar {
+    background: #ffffff;
+}
+
+.state-box {
+    border: 1px dashed #d7e2de;
+    border-radius: 0.75rem;
+    background: #fcfefd;
+}
+
+#tabList .nav-link {
+    white-space: nowrap;
+}
+
+#tabList .nav-link.active {
+    background-color: var(--brand);
+}
+
+.data-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    min-width: 300px;
+    max-width: 540px;
+}
+
+.data-item {
+    display: grid;
+    grid-template-columns: minmax(150px, 220px) 1fr;
+    gap: 0.6rem;
+    border-bottom: 1px solid #edf2f0;
+    padding: 0.4rem 0;
+    font-size: 0.92rem;
+}
+
+.data-item:last-child {
+    border-bottom: 0;
+}
+
+.data-key {
+    color: #445564;
+    font-weight: 700;
+    word-break: break-word;
+}
+
+.data-value {
+    color: #111827;
+    word-break: break-word;
+}
+
+.patient-block {
+    min-width: 180px;
+}
+
+.patient-name {
+    font-weight: 700;
+    color: #1f2933;
+}
+
+.patient-meta {
+    color: #51626f;
+    font-size: 0.88rem;
+    word-break: break-word;
+}
+
+@media (max-width: 767.98px) {
+    .data-item {
+        grid-template-columns: 1fr;
+        gap: 0.15rem;
+    }
+
+    .data-list {
+        min-width: 240px;
+    }
+}

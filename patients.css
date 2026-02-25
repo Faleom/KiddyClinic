@@ -1,0 +1,25 @@
+:root {
+    --bg: #f3f7f6;
+    --text: #1f2933;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.dashboard-navbar {
+    background: #ffffff;
+}
+
+.state-box {
+    border: 1px dashed #d7e2de;
+    border-radius: 0.75rem;
+    background: #fcfefd;
+}

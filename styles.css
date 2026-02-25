@@ -1,0 +1,201 @@
+:root {
+    --brand-bg: rgb(209, 255, 237);
+    --brand-accent: seagreen;
+    --hero-overlay: rgba(231, 255, 242, 0.86);
+    --surface-1: rgba(95, 158, 160, 0.199);
+    --surface-2: rgba(107, 184, 130, 0.199);
+    --surface-3: rgba(160, 116, 95, 0.199);
+    --surface-4: rgba(152, 95, 160, 0.199);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    color: #1b1b1b;
+    background-color: #ffffff;
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.site-header {
+    background-color: var(--brand-bg);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+.logo {
+    font-size: clamp(1.4rem, 2.4vw, 2rem);
+    font-weight: 700;
+    color: cadetblue;
+    text-decoration: none;
+}
+
+.nav-pill {
+    font-weight: 500;
+    background-color: #198754;
+    color: #fff;
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    text-align: center;
+}
+
+.nav-pill:hover,
+.nav-pill:focus {
+    color: #fff;
+    background-color: #157347;
+}
+
+.hero-section {
+    position: relative;
+    background-image: url("https://www.ecos-europe.com/wp-content/uploads/2021/07/children.jpg");
+    background-size: cover;
+    background-position: center;
+    isolation: isolate;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: var(--hero-overlay);
+    z-index: -1;
+}
+
+.hero-services .service-card {
+    border: 0;
+}
+
+.hero-services .card-body {
+    background-color: rgb(217, 255, 233);
+}
+
+.fas {
+    color: var(--brand-accent);
+}
+
+.service-sections {
+    overflow: hidden;
+}
+
+.service-block {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.bgc1 {
+    background-color: var(--surface-1);
+}
+
+.bgc2 {
+    background-color: var(--surface-2);
+}
+
+.bgc3 {
+    background-color: var(--surface-3);
+}
+
+.bgc4 {
+    background-color: var(--surface-4);
+}
+
+.category {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.round {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--brand-accent);
+}
+
+.round .fas {
+    color: #fff;
+}
+
+.capt {
+    font-weight: 500;
+}
+
+.doctor-card {
+    border: 0;
+}
+
+.doctor-card .card-img-top {
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+}
+
+.about-section {
+    position: relative;
+    background-image: url("https://mjamartialarts.com/upload/blogs/science-says-healthy-active-kids-get-better-grades.jpg");
+    background-size: cover;
+    background-position: center;
+    isolation: isolate;
+}
+
+.about-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(231, 255, 242, 0.84);
+    z-index: -1;
+}
+
+.section-divider {
+    max-width: 300px;
+    border-width: 2px;
+    opacity: 0.35;
+}
+
+.about-text {
+    font-size: 1.05rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.site-footer {
+    background-color: var(--brand-bg);
+    font-weight: 600;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        align-items: stretch;
+    }
+
+    .nav-pill {
+        display: block;
+        margin-bottom: 0.4rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-services .col-12 {
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
