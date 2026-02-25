@@ -5,9 +5,11 @@ const bcrypt = require('bcrypt');
 const sqlite3 = require('sqlite3').verbose();
 
 const app = express();
-const PORT = 3000;
+const PORT = Number(process.env.PORT) || 3000;
+const HOST = '0.0.0.0';
 const DB_PATH = path.join(__dirname, 'database.db');
 const SALT_ROUNDS = 12;
+const SESSION_SECRET = process.env.SESSION_SECRET || 'change-this-in-production';
 
 const db = new sqlite3.Database(DB_PATH, (err) => {
     if (err) {
@@ -235,7 +237,7 @@ app.use(express.json({ limit: '1mb' }));
 app.use(
     session({
         name: 'kiddyclinic.sid',
-        secret: process.env.SESSION_SECRET || 'change-this-in-production',
+        secret: SESSION_SECRET,
         resave: false,
         saveUninitialized: false,
         rolling: true,
@@ -609,8 +611,8 @@ app.use((err, _req, res, _next) => {
 initDatabase()
     .then(() => bootstrapAdminFromEnv())
     .then(() => {
-        app.listen(PORT, () => {
-            console.log(`Server running at http://localhost:${PORT}`);
+        app.listen(PORT, HOST, () => {
+            console.log(`Server running on ${HOST}:${PORT}`);
         });
     })
     .catch((err) => {
